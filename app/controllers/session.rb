@@ -3,7 +3,7 @@ get '/' do
 end
 
 get '/login' do
-  erb :login
+  erb :"sessions/new"
 end
 
 post '/login' do
@@ -11,7 +11,7 @@ post '/login' do
   user = User.authenticate(params[:email], params[:password])
  if user == false
    @error = "Invalid username and password combination. Please try again."
-   erb :login
+   erb :"sessions/new"
  else
    session[:user_id] = user.id
    redirect "/users/#{user.id}"
