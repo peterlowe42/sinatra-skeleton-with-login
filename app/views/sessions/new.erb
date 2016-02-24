@@ -1,0 +1,25 @@
+<% if @error %>
+<p><%=@error%></p>
+<%end%>
+<div class="panel-default col-sm-6">
+<h2>Please Login</h2>
+  <div class="panel-body">
+    <form action='/login' method='post'>
+      <fieldset class="form-group">
+        <input class="form-control" type='email' name='email' placeholder=" E-mail">
+      </fieldset>
+      <fieldset class="form-group">
+        <input class="form-control" type='password' name='password' placeholder=" Password">
+      </fieldset>
+      <input class="btn btn-primary" type='submit' value="Log me in">
+    </form>
+  </div>
+</div>
+
+<div class="panel-default col-sm-6">
+<h2>Or Register</h2>
+<form action='/users/new' method='get'>
+  <button type='submit'>Regiser</button>
+</form>
+</div>
+
